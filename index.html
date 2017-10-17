@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Emmie Sperandeo </title>
+
+  <link rel="stylesheet" href="styles/stylize.css">
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/themes/avocado.js"></script>
+
+</head>
+
+<body>
+
+<h1>Race in America</h1>
+
+<p>The discussion of race in America is something that varies in importance depending on who and when you ask. In the Pew Research Center's study titled "Views of Race and Inequality, Blacks and Whites Are Worlds Apart" readers are shown the statistical findings of their study and just how much skin color can change a persons point of view.</p>
+
+<p>This is particularly relevent in our current societal state as there is an abundance of racial pressure in our communities after the 2016 election.</p>
+
+<div id="container"></div>
+
+<script>Highcharts.chart('container', {
+  chart: {
+    type: 'bar'
+  },
+  title: {
+    text: 'Race Relations Seen as Generally Bad or Generally Good in the U.S.'
+  },
+  subtitle: {
+    text: 'Source: <a href="http://www.pewsocialtrends.org/2016/06/27/on-views-of-race-and-inequality-blacks-and-whites-are-worlds-apart/">pewsocialtrends.org</a>'
+  },
+  xAxis: {
+    categories: ['Generally good', 'Generally bad', 'Dont know / refused'],
+    title: {
+      text: null
+    }
+  },
+  yAxis: {
+    min: 0,
+    title: {
+      text: 'Responses',
+      align: 'high'
+    },
+    labels: {
+      overflow: 'justify'
+    }
+  },
+  tooltip: {
+    valueSuffix: ' responses'
+
+  },
+  plotOptions: {
+    bar: {
+      dataLabels: {
+        enabled: true
+      }
+    }
+  },
+  legend: {
+    layout: 'vertical',
+    align: 'right',
+    verticalAlign: 'top',
+    x: -40,
+    y: 80,
+    floating: true,
+    borderWidth: 1,
+    backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+    shadow: true
+  },
+  credits: {
+    enabled: false
+  },
+  series: [{
+    name: 'White',
+    data: [46, 45, 9]
+  }, {
+    name: 'Black',
+    data: [34, 61, 5]
+  }, {
+    name: 'Hispanic',
+    data: [37, 58, 5]
+  }]
+});
+</script>
+<p> http://www.pewsocialtrends.org/2016/06/27/on-views-of-race-and-inequality-blacks-and-whites-are-worlds-apart/ </p>
+
+<div id="years"></div>
+
+<script>
+
+    Highcharts.chart('years', {
+    chart: {
+        type: 'scatter',
+        zoomType: 'xy'
+    },
+    title: {
+        text: 'Are Race Relations in the U.S. Getting Worse?'
+    },
+    subtitle: {
+        text: 'Source: pewsocialtrends.org'
+    },
+    xAxis: {
+        title: {
+            enabled: true,
+            text: 'Number of People'
+        },
+        startOnTick: true,
+        endOnTick: true,
+        showLastLabel: true
+    },
+    yAxis: {
+        title: {
+            text: 'Year'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: 0,
+        y: 70,
+        floating: true,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
+        borderWidth: 1
+    },
+    plotOptions: {
+        scatter: {
+            marker: {
+                radius: 5,
+                states: {
+                    hover: {
+                        enabled: true,
+                        lineColor: 'rgb(100,100,100)'
+                    }
+                }
+            },
+            states: {
+                hover: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br>',
+                pointFormat: '{point.x} people, year {point.y}'
+            }
+        }
+    },
+    series: [{
+        name: 'White',
+        color: 'rgba(223, 83, 83, .5)',
+        data: [
+     					[39, 2016],
+              [40, 2015],
+              [46, 2015],
+              [36, 2014],
+              ]
+
+    }, {
+        name: 'Black',
+        color: 'rgba(119, 152, 191, .5)',
+        data: [
+        			[37, 2016],
+              [40, 2015],
+              [41, 2015],
+              [46, 2014],
+              ]
+
+    }, {
+        name: 'All Adults',
+        color: 'rgba(119, 152, 191, .5)',
+        data: [
+        			[38, 2016],
+              [38, 2015],
+              [44, 2015],
+              [36, 2014],
+              ]
+    }]
+});
+
+ </script>
+ <p> http://www.pewsocialtrends.org/2016/06/27/on-views-of-race-and-inequality-blacks-and-whites-are-worlds-apart/ </p>
+
+</body>

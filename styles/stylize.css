@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  font-family: "Verdana", sans-serif;
+  margin: 8em;
+}
+
+#container {
+  width: 80%;
+  height: 500px;
+}
+
+p { line-height: 2.5em; }
+
+a {
+  color: #0287b3;
+}
+
+a:hover {
+  color: #3ecbfa;
+}
+
+script {
+  padding: inherit;
+}
+
+h1 {
+  text-align: center;
+}
